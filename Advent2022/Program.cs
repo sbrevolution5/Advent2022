@@ -13,6 +13,7 @@ while (true)
     {
         if(dayNum == 0)
         {
+            Console.WriteLine("exiting code, Merry Christmas!");
             break;
         }
         else
