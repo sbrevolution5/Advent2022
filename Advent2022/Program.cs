@@ -13,7 +13,7 @@ while (true)
     {
         if(dayNum == 0)
         {
-            Console.WriteLine("exiting code, Merry Christmas!");
+            Console.WriteLine("Exiting code, Merry Christmas!");
             break;
         }
         else
@@ -21,7 +21,7 @@ while (true)
             switch (dayNum)
             {
                 case 1:
-                    dayNum = 1;
+                    new CalorieCounter();
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
