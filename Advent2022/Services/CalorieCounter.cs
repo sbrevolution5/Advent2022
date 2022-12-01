@@ -8,7 +8,14 @@ namespace Advent2022.Services
         public CalorieCounter()
         {
         }
+        public int Top3(string input)
+        {
+            List<CalorieElf> elves = ParseInput(input);
+            elves.Sort();
+            List<CalorieElf> top3 = elves.Take(3).ToList();
+            return top3.Select(e => e.Total).Sum();
 
+        }
         public int Count(string input)
         {
             List<CalorieElf> elves = ParseInput(input);

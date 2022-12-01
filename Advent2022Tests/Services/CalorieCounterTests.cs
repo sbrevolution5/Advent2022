@@ -13,21 +13,7 @@ namespace Tests
     public class CalorieCounterTests
     {
         private CalorieCounter _counter;
-
-        [TestInitialize]
-        public void SetUp()
-        {
-            _counter = new CalorieCounter();
-        }
-        [TestCleanup]
-        public void CleanUp()
-        {
-            _counter = null;
-        }
-        [TestMethod()]
-        public void CalorieCounterTest()
-        {
-            var input = @"1000
+        private static string _input = @"1000
 2000
 3000
 
@@ -41,10 +27,33 @@ namespace Tests
 9000
 
 10000";
+        [TestInitialize]
+        public void SetUp()
+        {
+            _counter = new CalorieCounter();
+        }
+        [TestCleanup]
+        public void CleanUp()
+        {
+            _counter = null;
+        }
+        [TestMethod()]
+        public void CalorieCounterTest()
+        {
+            
             //act
-            var res = _counter.Count(input);
+            var res = _counter.Count(_input);
             //assert
             res.Should().Be(24000);
+        }
+        [TestMethod]
+        public void Top3Test()
+        {
+            //arrange
+            //act
+            var res = _counter.Top3(_input);
+            //assert
+            res.Should().Be(45000);
         }
     }
 }
