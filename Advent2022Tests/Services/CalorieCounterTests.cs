@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Advent2022.Services;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,18 @@ namespace Tests
     [TestClass()]
     public class CalorieCounterTests
     {
+        private CalorieCounter _counter;
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            _counter = new CalorieCounter();
+        }
+        [TestCleanup]
+        public void CleanUp()
+        {
+            _counter = null;
+        }
         [TestMethod()]
         public void CalorieCounterTest()
         {
@@ -28,9 +42,9 @@ namespace Tests
 
 10000";
             //act
-            var res = CalorieCounter.Count(input);
+            var res = _counter.Count(input);
             //assert
-
+            res.Should().Be(24000);
         }
     }
 }

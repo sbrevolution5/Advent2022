@@ -1,5 +1,8 @@
 ﻿
 // See https://aka.ms/new-console-template for more information
+using Advent2022.Inputs;
+using Advent2022.Services;
+
 while (true)
 {
     Console.WriteLine("Please enter the day you wish to solve");
@@ -21,7 +24,9 @@ while (true)
             switch (dayNum)
             {
                 case 1:
-                    new CalorieCounter();
+                    var counter = new CalorieCounter();
+                    Console.WriteLine($"The elf with the most calories has {counter.Count(InputFinder.Day1)} calories");
+                    Console.WriteLine($"The Top 3 Elves have a total of {counter.Top3(InputFinder.Day1)} calories");
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");

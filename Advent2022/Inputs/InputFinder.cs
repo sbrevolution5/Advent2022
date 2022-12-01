@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Advent2022.Inputs
 {
-    public static class Advent2022
+    public static class InputFinder
     {
         public static string Day1 { get; set; } = @"17034
 
