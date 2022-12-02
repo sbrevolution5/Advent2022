@@ -19,9 +19,15 @@ C Z";
         public void CalcScoreTest()
         {
             var rps = new RockPaperScissors();
-            var res = rps.CalcScore(input);
+            var res = rps.CalcOLDScore(input);
             res.Should().Be(15);
 
+        }
+        public void CalcNewScoreTest()
+        {
+            var rps = new RockPaperScissors();
+            var res = rps.CalcTrueScore(input);
+            res.Should().Be(12);
         }
     }
 }

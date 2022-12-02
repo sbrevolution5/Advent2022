@@ -39,7 +39,7 @@ namespace Advent2022.Services
                     'C' => 3,
                     _ => throw new InvalidOperationException(),
                 };
-                round.Player2 = p2 switch
+                round.ExpectedOutcome = p2 switch
                 {
                     'X' => 1,
                     'Y' => 2,

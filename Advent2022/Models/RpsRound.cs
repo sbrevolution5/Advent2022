@@ -9,22 +9,25 @@ namespace Advent2022.Models
     internal class RpsRound
     {
         public int Player1 { get; set; }
-        public int Player2 { get; set; }
-        public int OLDRoundScore { get {
-                return this.Winner + this.Player2;
-            }
-        }
-        public int Winner
+        public int ExpectedOutcome { get; set; }
+        public int OLDRoundScore
         {
             get
             {
-                if (this.Player1 == this.Player2)
+                return this.OLDWinner + this.ExpectedOutcome;
+            }
+        }
+        public int OLDWinner
+        {
+            get
+            {
+                if (this.Player1 == this.ExpectedOutcome)
                 {
                     return 3;
                 }
                 else
                 {
-                    var diff = this.Player1 - this.Player2;
+                    var diff = this.Player1 - this.ExpectedOutcome;
                     if (diff == -1 || diff == 2)
                     {
                         return 6;
@@ -35,6 +38,20 @@ namespace Advent2022.Models
                     }
                 }
 
+            }
+        }
+        public int NewRoundScore
+        {
+            get
+            {
+                return 0;
+            }
+        }
+        public int NewWinner
+        {
+            get
+            {
+                return ;
             }
         }
     }
