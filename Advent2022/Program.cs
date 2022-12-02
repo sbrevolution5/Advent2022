@@ -5,7 +5,7 @@ using Advent2022.Services;
 
 while (true)
 {
-    Console.WriteLine("Please enter the day you wish to solve");
+    Console.WriteLine("Please enter the day you wish to solve.  Or enter 0 to exit with a bit of holiday cheer");
     string day = Console.ReadLine();
     long dayNum = 0;
     if (!Int64.TryParse(day, out dayNum))
