@@ -27,11 +27,11 @@ namespace Advent2022.Models
                     var diff = this.Player1 - this.Player2;
                     if (diff == -1 || diff == 2)
                     {
-                        return 0;
+                        return 6;
                     }
                     else
                     {
-                        return 6;
+                        return 0;
                     }
                 }
 
