@@ -9,10 +9,16 @@ namespace Advent2022.Services
 {
     public class RockPaperScissors
     {
-        public int CalcScore(string input)
+        public int CalcOLDScore(string input)
         {
             IEnumerable<RpsRound> rounds = ParseInput(input);
-            IEnumerable<int> scores = rounds.Select(r => r.RoundScore);
+            IEnumerable<int> scores = rounds.Select(r => r.OLDRoundScore);
+            return scores.Sum();
+        }
+        public int CalcTrueScore(string input)
+        {
+            IEnumerable<RpsRound> rounds = ParseInput(input);
+            IEnumerable<int> scores = rounds.Select(r => r.OLDRoundScore);
             return scores.Sum();
         }
 

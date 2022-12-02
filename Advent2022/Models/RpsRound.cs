@@ -10,7 +10,7 @@ namespace Advent2022.Models
     {
         public int Player1 { get; set; }
         public int Player2 { get; set; }
-        public int RoundScore { get {
+        public int OLDRoundScore { get {
                 return this.Winner + this.Player2;
             }
         }
