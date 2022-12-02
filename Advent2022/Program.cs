@@ -31,6 +31,7 @@ while (true)
                 case 2:
                     var rps = new RockPaperScissors();
                     Console.WriteLine($"The total score for following the strategy guide is {rps.CalcOLDScore(InputFinder.Day2)}");
+                    Console.WriteLine($"WAIT YOU STUPID, Thats not player 2's move! Its the expected outcome of the game!!!! The REAL total score for following the strategy guide is {rps.CalcTrueScore(InputFinder.Day2)}");
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
