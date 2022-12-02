@@ -23,6 +23,7 @@ C Z";
             res.Should().Be(15);
 
         }
+        [TestMethod()]
         public void CalcNewScoreTest()
         {
             var rps = new RockPaperScissors();
