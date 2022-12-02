@@ -21,7 +21,7 @@ C Z";
             var rps = new RockPaperScissors();
             var res = rps.CalcScore(input);
             res.Should().Be(15);
-            Assert.Fail();
+
         }
     }
 }

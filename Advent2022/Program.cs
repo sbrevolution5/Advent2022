@@ -29,7 +29,9 @@ while (true)
                     Console.WriteLine($"The Top 3 Elves have a total of {counter.Top3(InputFinder.Day1)} calories");
                     break;
                 case 2:
+                    var rps = new RockPaperScissors();
                     Console.WriteLine($"The total score for following the strategy guide is {rps.CalcScore(InputFinder.Day2)}");
+                    break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
                     break;

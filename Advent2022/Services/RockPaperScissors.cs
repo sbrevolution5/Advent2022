@@ -12,8 +12,8 @@ namespace Advent2022.Services
         public int CalcScore(string input)
         {
             IEnumerable<RpsRound> rounds = ParseInput(input);
-            IEnumerable<int> scores = rounds.Select(r => r.Score);
-            throw new NotImplementedException();
+            IEnumerable<int> scores = rounds.Select(r => r.RoundScore);
+            return scores.Sum();
         }
 
         private IEnumerable<RpsRound> ParseInput(string input)
