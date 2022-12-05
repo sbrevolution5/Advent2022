@@ -10,6 +10,9 @@ namespace Advent2022.Models
     {
         public string Input { get; set; }
         public List<string> Halves { get; set; } = new List<string>();
+        public int GroupNumber { get; set; }
+        public char Badge { get; set; }
+        public int BadgePriority { get; set; }
         public char Duplicate { get; set; }
         public int Priority { get; set; }
     }

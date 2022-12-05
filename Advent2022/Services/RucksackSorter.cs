@@ -15,6 +15,12 @@ namespace Advent2022.Services
             List<Sack> sacks = ProcessSacks(sackstrings);
             return sacks.Select(s=>s.Priority).Sum();
         }
+        public int FindBadges(string input)
+        {
+            List<string> sackstrings = ParseInput(input);
+            List<Sack> sacks = ProcessSacks(sackstrings);
+
+        }
 
         private List<Sack> ProcessSacks(List<string> sackstrings)
         {

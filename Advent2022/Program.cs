@@ -33,6 +33,10 @@ while (true)
                     Console.WriteLine($"The total score for following the strategy guide is {rps.CalcOLDScore(InputFinder.Day2)}");
                     Console.WriteLine($"WAIT YOU STUPID, Thats not player 2's move! Its the expected outcome of the game!!!! The REAL total score for following the strategy guide is {rps.CalcTrueScore(InputFinder.Day2)}");
                     break;
+                case 3:
+                    var rucksack = new RucksackSorter();
+                    Console.WriteLine($"The Total Priority of the duplicates is {rucksack.GetDuplicatePriority(InputFinder.Day3)}");
+                    break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
                     break;
