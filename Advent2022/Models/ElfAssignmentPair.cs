@@ -8,7 +8,9 @@ namespace Advent2022.Models
 {
     public class ElfAssignmentPair
     {
-        public int Low { get; set; }
-        public int High { get; set; }
+        public List<ElfAssignment> Pair { get; set; } = new List<ElfAssignment>();
+        public bool FullContain { get; set; }
+        public int Lowest { get; set; }
+        public int Highest { get; set; }
     }
 }
