@@ -23,6 +23,16 @@ namespace Advent2022.Services
             }
             return elves.Where(e=>e.FullContain).Count();
         }
+        public int FindNumberOfOverlaps(string input)
+        {
+            var elves = ParseInput(input);
+            var res = 0;
+            foreach (var pair in elves)
+            {
+                PairOverlapsAtAll(pair);
+            }
+            return elves.Where(e=>e.Overlaps).Count();
+        }
 
         private void PairContainsOther(ElfAssignmentPair pair)
         {
@@ -38,6 +48,17 @@ namespace Advent2022.Services
             }
             else 
                 pair.FullContain = false;
+        }
+        private void PairOverlapsAtAll(ElfAssignmentPair pair)
+        {
+            var e1 = pair.Pair[0];
+            var e2 = pair.Pair[1];
+            if (e1.High < e2.Low||e2.High < e1.Low)
+            {
+                pair.Overlaps = false;
+            }
+            else
+                pair.Overlaps = true;
         }
 
         private bool OuterContainsInner(ElfAssignment outer, ElfAssignment inner)

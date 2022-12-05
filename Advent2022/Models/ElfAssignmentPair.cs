@@ -12,5 +12,6 @@ namespace Advent2022.Models
         public bool FullContain { get; set; }
         public int Lowest { get; set; }
         public int Highest { get; set; }
+        public bool Overlaps { get; set; }
     }
 }

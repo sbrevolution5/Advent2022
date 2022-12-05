@@ -41,6 +41,7 @@ while (true)
                 case 4:
                     var cleanup = new CampCleanup();
                     Console.WriteLine($"There are {cleanup.FindNumberOfParentPairs(InputFinder.Day4)} pairs which contain each other");
+                    Console.WriteLine($"Also, {cleanup.FindNumberOfOverlaps(InputFinder.Day4)} pairs simply overlap at all");
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");

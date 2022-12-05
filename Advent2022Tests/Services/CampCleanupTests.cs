@@ -25,5 +25,13 @@ namespace Advent2022.Services.Tests
             var res = cleanup.FindNumberOfParentPairs(input);
             res.Should().Be(2);
         }
+
+        [TestMethod()]
+        public void FindNumberOfOverlapsTest()
+        {
+            var cleanup = new CampCleanup();
+            var res = cleanup.FindNumberOfOverlaps(input);
+            res.Should().Be(4);
+        }
     }
 }
