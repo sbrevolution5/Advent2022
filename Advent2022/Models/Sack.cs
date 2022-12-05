@@ -13,6 +13,7 @@ namespace Advent2022.Models
         public int GroupNumber { get; set; }
         public char Badge { get; set; }
         public int BadgePriority { get; set; }
+        public List<char> Items { get; set; } = new List<char>();
         public char Duplicate { get; set; }
         public int Priority { get; set; }
     }

@@ -32,7 +32,6 @@ CrZsJsPPZsGzwwsLwLmpwMDw";
             var sorter = new RucksackSorter();
             var result = sorter.FindBadges(_input);
             result.Should().Be(70);
-            Assert.Fail();
         }
     }
 }

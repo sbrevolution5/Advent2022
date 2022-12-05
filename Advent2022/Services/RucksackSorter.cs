@@ -19,7 +19,14 @@ namespace Advent2022.Services
         {
             List<string> sackstrings = ParseInput(input);
             List<Sack> sacks = ProcessSacks(sackstrings);
-            throw new NotImplementedException();
+            //get one of each group
+            int groups = sacks.Select(s => s.GroupNumber).Max();
+            var reps = new List<Sack>();
+            for (int i = 1; i < groups+1; i++)
+            {
+                reps.Add(sacks.Where(s=>s.GroupNumber== i).First());
+            }
+            return reps.Select(s => s.BadgePriority).Sum();
 
         }
 
@@ -42,11 +49,50 @@ namespace Advent2022.Services
             }
             foreach (var sack in res)
             {
+                SortItems(sack);
                 SplitInput(sack);
                 FindDuplicate(sack);
                 SetPriority(sack);
             }
+            //Take Items for each group, and find the match.  
+            var remain = res;
+            for (int j = 0; j < res.Count(); j+=3)
+            {
+                var oneGroup = remain.Take(3);
+                FindGroupBadge(oneGroup);
+                remain = remain.Skip(3).ToList();
+            }
+            foreach(var sack in res)
+            {
+                SetBadgePriority(sack);
+            }
             return res;
+        }
+
+        private void FindGroupBadge(IEnumerable<Sack> oneGroup)
+        {
+            var a = oneGroup.First();
+            var b = oneGroup.ElementAt(1);
+            var c = oneGroup.ElementAt(2);
+            foreach (var ch in a.Items)
+            {
+                if (b.Items.Contains(ch))
+                {
+                    if (c.Items.Contains(ch))
+                    {
+                        a.Badge = ch;
+                        b.Badge = ch;
+                        c.Badge = ch;
+                        return;
+                    }
+                }
+            }
+            throw new InvalidOperationException();
+        }
+
+        private void SortItems(Sack sack)
+        {
+            sack.Items = sack.Input.Distinct().ToList();
         }
 
         private void FindDuplicate(Sack sack)
@@ -73,6 +119,17 @@ namespace Advent2022.Services
             else
             {
                 sack.Priority = sack.Duplicate-38;
+            }
+        }
+        private void SetBadgePriority(Sack sack)
+        {
+            if (sack.Badge>96)
+            {
+                sack.BadgePriority = sack.Badge - 96;
+            }
+            else
+            {
+                sack.BadgePriority = sack.Badge-38;
             }
         }
 
