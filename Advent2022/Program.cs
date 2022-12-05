@@ -36,6 +36,7 @@ while (true)
                 case 3:
                     var rucksack = new RucksackSorter();
                     Console.WriteLine($"The Total Priority of the duplicates is {rucksack.GetDuplicatePriority(InputFinder.Day3)}");
+                    Console.WriteLine($"The Total Priority of each group's badge is {rucksack.FindBadges(InputFinder.Day3)}");
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
