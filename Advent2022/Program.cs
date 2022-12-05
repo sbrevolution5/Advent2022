@@ -46,6 +46,7 @@ while (true)
                 case 5:
                     var cargo = new CargoCrane();
                     Console.WriteLine($"The top of each stack reads {cargo.SkimTheTop(InputFinder.Day5)}");
+                    Console.WriteLine($"When The Crane gets the REAL instructions, the top line reads{cargo.SkimAgain(InputFinder.Day5)}");
                     break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");

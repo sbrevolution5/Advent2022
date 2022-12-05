@@ -12,7 +12,7 @@ namespace Advent2022.Services.Tests
     [TestClass()]
     public class CargoCraneTests
     {
-        private string _input= @"    [D]    
+        private string _input = @"    [D]    
 [N] [C]    
 [Z] [M] [P]
  1   2   3 
@@ -27,6 +27,14 @@ move 1 from 1 to 2";
             var crane = new CargoCrane();
             var res = crane.SkimTheTop(_input);
             res.Should().Be("CMZ");
+        }
+
+        [TestMethod()]
+        public void SkimAgainTest()
+        {
+            var crane = new CargoCrane();
+            var res = crane.SkimAgain(_input);
+            res.Should().Be("MCD");
         }
     }
 }
