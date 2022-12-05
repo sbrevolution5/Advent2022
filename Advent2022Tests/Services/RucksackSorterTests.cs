@@ -25,5 +25,14 @@ CrZsJsPPZsGzwwsLwLmpwMDw";
             var result = sorter.GetDuplicatePriority(_input);
             result.Should().Be(157);
         }
+
+        [TestMethod()]
+        public void FindBadgesTest()
+        {
+            var sorter = new RucksackSorter();
+            var result = sorter.FindBadges(_input);
+            result.Should().Be(70);
+            Assert.Fail();
+        }
     }
 }

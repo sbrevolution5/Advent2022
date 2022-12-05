@@ -19,16 +19,25 @@ namespace Advent2022.Services
         {
             List<string> sackstrings = ParseInput(input);
             List<Sack> sacks = ProcessSacks(sackstrings);
+            throw new NotImplementedException();
 
         }
 
         private List<Sack> ProcessSacks(List<string> sackstrings)
         {
             var res = new List<Sack>();
+            var group = 1;
+            var i = 0;
             foreach (var sack in sackstrings)
             {
                 var x = new Sack();
                 x.Input = sack;
+                x.GroupNumber = group;
+                i++;
+                if (i%3 == 0)
+                {
+                    group++;
+                }
                 res.Add(x);
             }
             foreach (var sack in res)
