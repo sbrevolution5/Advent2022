@@ -38,6 +38,10 @@ while (true)
                     Console.WriteLine($"The Total Priority of the duplicates is {rucksack.GetDuplicatePriority(InputFinder.Day3)}");
                     Console.WriteLine($"The Total Priority of each group's badge is {rucksack.FindBadges(InputFinder.Day3)}");
                     break;
+                case 4:
+                    var cleanup = new CampCleanup();
+                    Console.WriteLine($"There are {cleanup.FindNumberOfParentPairs(InputFinder.Day4)} pairs which contain each other");
+                    break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
                     break;
