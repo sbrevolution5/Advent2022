@@ -31,24 +31,41 @@ namespace Advent2022.Services
                 FindDuplicate(sack);
                 SetPriority(sack);
             }
-            throw new NotImplementedException();
+            return res;
         }
 
         private void FindDuplicate(Sack sack)
         {
-            sack.Duplicate = 'a';
+            var h1 = sack.Halves.First();
+            var h2 = sack.Halves.Last();
+            foreach (var c in h1)
+            {
+                if (h2.Contains(c))
+                {
+                    sack.Duplicate = c;
+                    return;
+                };
+            }
+            throw new InvalidOperationException();
         }
 
         private void SetPriority(Sack sack)
         {
-            sack.Priority = sack.Priority - 50;
+            if (sack.Duplicate>96)
+            {
+                sack.Priority = sack.Duplicate - 96;
+            }
+            else
+            {
+                sack.Priority = sack.Duplicate-38;
+            }
         }
 
         private void SplitInput(Sack sack)
         {
             var halfwaypt = sack.Input.Length / 2;
             var h1 = sack.Input.Substring(0, halfwaypt);
-            var h2 = sack.Input.Substring(halfwaypt, halfwaypt - 1);
+            var h2 = sack.Input.Substring(halfwaypt, halfwaypt);
             sack.Halves.Add(h1);
             sack.Halves.Add(h2);
         }
