@@ -43,6 +43,10 @@ while (true)
                     Console.WriteLine($"There are {cleanup.FindNumberOfParentPairs(InputFinder.Day4)} pairs which contain each other");
                     Console.WriteLine($"Also, {cleanup.FindNumberOfOverlaps(InputFinder.Day4)} pairs simply overlap at all");
                     break;
+                case 5:
+                    var cargo = new CargoCrane();
+                    Console.WriteLine($"The top of each stack reads {cargo.SkimTheTop(InputFinder.Day5)}");
+                    break;
                 default:
                     Console.WriteLine("Number is either over 25 or puzzle not complete for that day");
                     break;
